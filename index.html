@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <!-- Add any CSS stylesheets or meta tags here -->
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }   
+        header {
+            background-color: #6586bc;
+            color: #fff;
+            padding: 1rem;
+        }
+        nav {
+            margin: 1rem 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 1rem;
+        }
+        footer {
+            background-color: #6586bc;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: static;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <h1>Welcome To SLIDE</h1>
+        <nav>
+            <ul>
+                <li><a href="#a-guide-to-slide">A Guide To SLIDE</a></li>
+                <li><a href="inputting-information">Inputting Information</a></li>
+                <li><a href="#downloading-outputs">Downloading Outputs</a></li>
+                <li><a href="#help">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="#overview-of-slide">
+            <h2>A Guide To SLIDE</h2>
+            <p>Here, the Das lab presents SLIDE, a first class interpretable machine learning technique that has the ability to identify significant latent factors underlying outcomes of interest from high dimensional omic datasets.</p>
+            <ul>
+                <li>SLIDE makes no assumptions regarding the distribution of the underlying data as it significantly builds on a unique latent-factor regression framework.</li>
+                <li>It takes into account an extremely large search space of relationships to converge on a very small subset of biologically relevant and actionable latent factors.</li>
+                <li>Critically, SLIDE incorporates both linear and nonlinear relationships, including complex hierarchical structures.</li>
+                <li>The discovery of SLIDE is also coupled to rigorous false discovery rate (FDR) control via our unique analytical framework that creatively adapts ultramodern methods for FDR control.</li>
+            </ul>
+            <h2>How To Use SLIDE</h2>
+            <p>Read through these instructions and defitions to understand how to use SLIDE.</p>
+            <p>The key input to SLIDE are just two csv files, the <b>data matrix x</b> and the <b>response vector y</b> file post pre-processing such as batch effect correction and/or normalization (for example, for scRN-seq data, first process with the standard Seurat pipeline).</p>
+            <p>The x file contains your data in a sample by feature format, such as single cell transcriptomics (cell by gene), or spatial proteomics (region by protein). The y file contains the responses of the data, such as severity of disease, spatial regions or clonal expansion. Since SLIDE is a regression method, when the response vector has multiple unique values (not just two classes), please make sure there are an ordinal relation between the y values. <i>*Please make sure both csv files have row names and column names.</i></p>
+            <p>SLIDE also provides other parameters (which will be displayed in a drop-down menu). However, we have set default values to many parameters that works well with majority of the data moralities. Read through the <a href="public/SLIDE.pdf">SLIDE: Parameter Tuning Document</a> to find more information about each of the parameters</p>
+            <p><b>Otherwise the provided parameters will be:</b></p>
+            <ul>
+                <li>x_path:  a string of the path to the data matrix (x) in the csv format with row names and column names where each row is samples (cells, patients, regions. . . ) and each column is a features (genes, proteins. . . )</li>
+                <li>y_path: a string of the path of the response vector (y) in the csv format with row names and column names where each row is a sample and the column would be the outcome of interest</li>
+                <li>delta: control the number of all latent factors. The higher the delta, the less number of latent factors will be found. <b>Default as 0.01 and 0.1</b></li>
+                <li>lambda: control the sparsity of all latent factors. The higher the lambda, the less number of features will be in a latent factor. <b>Default as 0.5 and 1</b></li>
+            </ul>
+
+        </section>
+        <main>
+            <section id="inputting-information">
+                <h3>Inputting Information</h3>
+                <p>Please enter your information:</p>
+        
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+        
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </main>
+        
+</body>
+</html>
